@@ -1,13 +1,9 @@
-li {
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-}
+
 mat-list-option:hover {
-    background-color: rgb(174, 204, 160);
+    background-color: rgb(0, 0, 0);
+    font: rgb(41, 39, 39)
+}
+mat-list-option{
+    background-color: rgb(41, 39, 39);
+    font: rgb(41, 39, 39);
 }

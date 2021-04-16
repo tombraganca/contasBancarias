@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BancosService } from '../bancos.service';
+import { LocalStorageService } from '../local-storage.service';
+
+
 @Component({
   selector: 'app-cadastro-conta',
   templateUrl: './cadastro-conta.component.html',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroContaComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(public localStorage: LocalStorageService, public apiBrasil: BancosService) {
+   }
 
   ngOnInit(): void {
+
+    this.apiBrasil.getBanco().subscribe(banco => console.log(banco));
+    
   }
 
 }

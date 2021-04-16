@@ -1,5 +1,24 @@
+<button mat-raised-button id= "goInicio" routerLink="/inicio">Início</button>
+
 <h3>lista de contas:</h3>
 
+<div *ngIf="selectedUser">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{selectedUser.name | uppercase}}</mat-card-title>
+      <mat-card-subtitle>{{selectedUser.banco.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>Conta: {{selectedUser.nConta}}</h3>
+      <h3>Agencia: {{selectedUser.agencia}}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Editar</button>
+      <button mat-button>Deletar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
 <div>
 <mat-selection-list [multiple]="false">
@@ -10,12 +29,7 @@
 </mat-selection-list>
 
 
-<div *ngIf="selectedUser">
-     <h2>{{selectedUser.name | uppercase}}</h2>
-     <h3>Conta: {{selectedUser.nConta}}</h3>
-     <h3>Agencia: {{selectedUser.agencia}}</h3>
-    <label>
-        Name:
-        <input type="text" [formControl]="name">
-      </label>
-</div>
+
+
+
+
