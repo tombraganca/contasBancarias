@@ -1,4 +1,4 @@
-import { Conta } from './Users'
+import { Conta } from './User'
 
 export const users: Conta[] = [
     { name: 'Tom', banco: "112", agencia: "0001", nConta: "00000-0" },

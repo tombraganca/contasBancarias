@@ -1,7 +1,21 @@
 <h3>lista de contas:</h3>
 
-<ul class="heroes">
-    <li *ngFor="let user of user"> 
-        <span id=""> {{user.name}} {{user.banco}} {{user.nConta}} {{user.agencia}} </span>
-    </li>
-  </ul>
+
+<div>
+<mat-selection-list [multiple]="false">
+  <ng-temoplate *ngFor="let user of usuarios" [class.selected]="user === selectedUser" (click)="onSelect(user)" >
+    <mat-list-option>{{user.name}}</mat-list-option>
+    <mat-divider></mat-divider>
+  </ng-temoplate>
+</mat-selection-list>
+
+
+<div *ngIf="selectedUser">
+     <h2>{{selectedUser.name | uppercase}}</h2>
+     <h3>Conta: {{selectedUser.nConta}}</h3>
+     <h3>Agencia: {{selectedUser.agencia}}</h3>
+    <label>
+        Name:
+        <input type="text" [formControl]="name">
+      </label>
+</div>
