@@ -19,6 +19,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import {MatCardModule} from '@angular/material/card';
 import { LocalStorageService } from './local-storage.service';
 import { BancosService } from './bancos.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,13 @@ import { BancosService } from './bancos.service';
     MatButtonModule,
     MatInputModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
     useValue: { appearance: 'fill' } },
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

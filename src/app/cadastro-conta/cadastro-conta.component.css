@@ -2,3 +2,9 @@ mat-form-field{
     background:rgb(41, 39, 39);
     border-radius: 5px;
 }
+div#bank-details{
+    margin-top: 20px;   
+}
+mat-button{
+    background-color: grey;
+}
