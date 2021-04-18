@@ -22,9 +22,9 @@ export class ContasComponent implements OnInit {
  }
 
   ngOnInit(): void {
-    this.usuarios = this.getContas();
-    console.log(this.usuarios)
     
+    this.usuarios = this.getContas();
+    console.log(this.usuarios);
   }
 
   onSelect(user: Conta): void {
@@ -33,15 +33,20 @@ export class ContasComponent implements OnInit {
     this.name.markAsTouched();
   }
 
+  
   getContas(): Conta[]{
     let tam = localStorage.length;
-    let conta: Conta[]
+    let contas: Conta[] = [];
 
     for (let index = 0; index < tam; index++) {
       let aux: Conta = JSON.parse(localStorage.getItem(`${index}`))
-      conta.push(aux);
+     
+      if(aux){
+        contas.push(aux);
+        console.log("valor do aux: ", aux);
+      }
     }
-    return conta
+    return contas;
   }
 
 
