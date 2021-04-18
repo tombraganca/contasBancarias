@@ -14,7 +14,7 @@ import { users } from '../mock-contas';
 export class ContasComponent implements OnInit {
 
   name = new FormControl('');
-  usuarios = users;
+  usuarios: Conta[];
   selectedUser?: Conta;
 
   constructor() {
@@ -22,6 +22,8 @@ export class ContasComponent implements OnInit {
  }
 
   ngOnInit(): void {
+    this.usuarios = this.getContas();
+    console.log(this.usuarios)
     
   }
 
@@ -30,6 +32,18 @@ export class ContasComponent implements OnInit {
     this.name.setValue(user.name);
     this.name.markAsTouched();
   }
+
+  getContas(): Conta[]{
+    let tam = localStorage.length;
+    let conta: Conta[]
+
+    for (let index = 0; index < tam; index++) {
+      let aux: Conta = JSON.parse(localStorage.getItem(`${index}`))
+      conta.push(aux);
+    }
+    return conta
+  }
+
 
 
 }

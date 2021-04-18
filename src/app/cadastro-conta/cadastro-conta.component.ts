@@ -19,6 +19,8 @@ export class CadastroContaComponent implements OnInit {
   error: String;
   selectedBanco?: Banco;
   name = new FormControl('');
+  tam: string = this.getTam();;
+  key: String;
 
   dado: Conta;
   
@@ -27,7 +29,9 @@ export class CadastroContaComponent implements OnInit {
     this.getter();
 
    }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.tam)
+   }
 
   getter(){
     this.apiBrasil.getBancos().subscribe(
@@ -48,7 +52,15 @@ export class CadastroContaComponent implements OnInit {
   }
 
   save(nome: string, conta: string, agencia: string, bank: Banco){
-    this.dado = { name: nome, nConta: conta, agencia: agencia, banco: bank };
+    let key = `${Number(this.tam)}`;
+    this.dado = { id: key, name: nome, nConta: conta, agencia: agencia, banco: bank };
     console.log(this.dado)
+    const data = JSON.stringify(this.dado);
+    localStorage.setItem(this.dado.id, data);
   }
+
+  getTam(): string{
+    return localStorage.length?`${localStorage.length}`:"0";
+    }
+
 }
