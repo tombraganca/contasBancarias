@@ -1,8 +1,12 @@
+
 <nav>
-    <button mat-raised-button routerLink="/inicio">Início</button>
+    <button mat-raised-button color="blue" routerLink="/inicio"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>Início</button>
+  </nav><nav>
+      <button mat-raised-button routerLink="/contas"><mat-icon>list</mat-icon>Lista de usuários</button>
 </nav>
+
 <div>
-    <h1>Novo Cadastro:</h1>
+    <h1>Novo Cadastro</h1>
     <h3>Escolha um banco:</h3>
 
 
@@ -18,16 +22,16 @@
 <div id="bank-details" *ngIf="selectedBanco">
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title>{{selectedBanco.name | uppercase}}</mat-card-title>
-      <mat-card-subtitle>{{selectedBanco.name}}</mat-card-subtitle>
+      <mat-card-title>{{ selectedBanco.name | uppercase }}</mat-card-title>
+      <mat-card-subtitle>{{ selectedBanco.name }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <h3>Codigo do banco:</h3>
-      <h4>{{selectedBanco.code}}</h4>
+      <h4>{{ selectedBanco.code }}</h4>
       <h3>Nome completo:</h3>
-      <h4>{{selectedBanco.fullName}}</h4>
+      <h4>{{ selectedBanco.fullName }}</h4>
       <h3>ISPB:</h3>
-      <h3>{{selectedBanco.ispb}}</h3>
+      <h3>{{ selectedBanco.ispb }}</h3>
 
       <form class="example-form">
 

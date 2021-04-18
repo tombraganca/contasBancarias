@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(41, 39, 39);
+    background-color: rgb(119, 17, 119);
+    background: #FFFFFF url("Imagens/pexels-riaan-beylefeld-7021618.jpg") no-repeat right top fixed;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

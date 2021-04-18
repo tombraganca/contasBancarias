@@ -4,6 +4,15 @@ mat-list-option:hover {
     font: rgb(41, 39, 39)
 }
 mat-list-option{
-    background-color: rgb(41, 39, 39);
+    background-color: rgb(119, 37, 37);
     font: rgb(41, 39, 39);
+}
+mat-card{
+    background-color: rgb(119, 37, 37);
+}
+mat-list-option{
+    border-radius: 5px;
+}
+button mat-raised-button{
+    margin: 10px;
 }
