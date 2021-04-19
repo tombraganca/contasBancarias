@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 >This project consists of the control of data of accounts of fictitious persons.
 >It is possible to create new users, list the users as well as delete them.
 
+You can also access the test site through the link: [tomcontabancarias.netlify.app](tomcontabancarias.netlify.app)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
