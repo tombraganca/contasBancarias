@@ -30,19 +30,15 @@ export class CadastroContaComponent implements OnInit {
 
    }
   ngOnInit(): void {
-    console.log(this.tam)
    }
 
 
   getter(){
     this.apiBrasil.getBancos().subscribe(
       (data: Banco[]) => {
-        this.banco = data;
-        console.log(this.banco)
-        console.log("data recebida", data)
+        this.banco = data;        
       }, (error: String) => {
       this.error = error;
-      console.error('Error:', error)
       }
     );
   }
@@ -55,7 +51,6 @@ export class CadastroContaComponent implements OnInit {
   save(nome: string, conta: string, agencia: string, bank: Banco){
     let key = `${Number(this.tam)}`;
     this.dado = { id: key, name: nome, nConta: conta, agencia: agencia, banco: bank };
-    console.log(this.dado)
     const data = JSON.stringify(this.dado);
     localStorage.setItem(this.dado.id, data);
   }
