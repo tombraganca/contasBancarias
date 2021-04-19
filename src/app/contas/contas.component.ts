@@ -49,6 +49,14 @@ export class ContasComponent implements OnInit {
     return contas;
   }
 
+  getTam(): Number{
+    return Number(localStorage.length)
+  }
+
+  deletConta(key, conta: Conta){
+    conta.id = "-1";
+    localStorage.setItem(key, JSON.stringify(conta));
+  }
 
 
 }

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-//import { timeStamp } from 'node:console';
-import { Banco } from '../bancos';
+import {FormControl, Validators} from '@angular/forms';
 
 import { BancosService } from '../bancos.service';
 import { LocalStorageService } from '../local-storage.service';
 import { Conta } from '../User';
-
+import { Banco } from '../bancos';
 
 @Component({
   selector: 'app-cadastro-conta',
@@ -15,10 +13,12 @@ import { Conta } from '../User';
 })
 export class CadastroContaComponent implements OnInit {
 
+  conta;
+  agencia;
+  name;
   banco: Banco[] = [];
   error: String;
   selectedBanco?: Banco;
-  name = new FormControl('');
   tam: string = this.getTam();;
   key: String;
 
@@ -32,6 +32,7 @@ export class CadastroContaComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.tam)
    }
+
 
   getter(){
     this.apiBrasil.getBancos().subscribe(
@@ -61,6 +62,7 @@ export class CadastroContaComponent implements OnInit {
 
   getTam(): string{
     return localStorage.length?`${localStorage.length}`:"0";
-    }
+  }
+
 
 }

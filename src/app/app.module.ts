@@ -8,6 +8,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,10 +18,9 @@ import { MaterialModule } from './material/material.module';
 import { CadastroContaComponent } from './cadastro-conta/cadastro-conta.component';
 import { RotasModule } from './rotas.module';
 import { InicioComponent } from './inicio/inicio.component';
-import {MatCardModule} from '@angular/material/card';
 import { LocalStorageService } from './local-storage.service';
 import { BancosService } from './bancos.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [

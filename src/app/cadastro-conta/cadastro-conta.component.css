@@ -8,8 +8,6 @@ div#bank-details{
 mat-button{
     background: rgb(114, 56, 56);
 }
-.mat-raised-button.mat-blue {
-    color: blue;
-    background-color: cyan;
+.mat-raised-button {
     margin: 5px;
  }

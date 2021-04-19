@@ -1,6 +1,6 @@
-<button mat-raised-button id= "goInicio" routerLink="/inicio">Início</button>
+<button mat-raised-button id= "goInicio" routerLink="/inicio"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Início</button>
 
-<h3>lista de contas:</h3>
+<h2>Lista de contas:</h2>
 
 <div *ngIf="selectedUser">
   <mat-card class="example-card">
@@ -14,22 +14,25 @@
       <h3>Agencia: {{selectedUser.agencia}}</h3>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Editar</button>
-      <button mat-button>Deletar</button>
+      <button mat-button (click)="deletConta(selectedUser.id, selectedUser)" >Deletar</button>
     </mat-card-actions>
   </mat-card>
 </div>
 
-<div>
+<div *ngIf="getTam() != 0">
 <mat-selection-list [multiple]="false">
   <ng-temoplate *ngFor="let user of usuarios" [class.selected]="user === selectedUser" (click)="onSelect(user)" >
-    <mat-list-option>{{user.name}}</mat-list-option>
-    <mat-divider></mat-divider>
+    <div *ngIf="user.id != -1" >
+      <mat-list-option>{{user.name}}</mat-list-option>
+      <mat-divider></mat-divider>
+    </div>
   </ng-temoplate>
 </mat-selection-list>
-
-
-
-
-
+</div>
+<div >
+  <h3 *ngIf="getTam() == 0">Não existe nenhuma conta cadastrada no momento.</h3>
+  <button mat-raised-button id= "goCadastro" routerLink="/cadastro-conta"><mat-icon aria-hidden="false" aria-label="Example home icon"><span class="material-icons-outlined">
+    control_point
+    </span></mat-icon>Cadastrar</button>
+</div>
 
